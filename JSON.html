@@ -32,7 +32,28 @@
         "lastName": "Ramos",
         "petsOwned": 2
       }
-    }`;
+    }`;//JSON - is actually a string
+
+    const obj = {
+      name: "Whiskers",
+      age: 3,
+      isFriendly: true,
+    } //Javascript object
+
+    /*
+    Differences:
+    1. Single quote at the top - jsonData variables is a String
+    2. Double quotes for variables 
+    */
+
+    //step 1: convert JSON to JS  Object. Only then it will become usable
+    let receivedObject =JSON.parse(jsonData);
+    receivedObject.owner.firstName = "Roy"; //update
+    receivedObject.owner.occupation = "Student"; //add new value;
+
+    //before sending data, convert JS Objects to JSON (Universal format)
+    let updatedJSON = JSON.stringify(receivedObject);
+
 
     console.log("Raw JSON (as text):");
     console.log(jsonData);
